@@ -12,23 +12,11 @@ const BarShowContainer = (props) => {
   })
 
   const fetchBar = async () => {
-    const barId = props.match.params.id
-    try {
-      const response = await fetch(`/api/v1/bar/${barId}`)
-      if (!response.ok) {
-        const errorMessage = `${response.status} (${response.statusText})`
-        const error = new Error(errorMessage)
-        throw(error)
-      }
-      const barData = await response.json()
-      setBarRecord(barData.bar)
-    } catch(err) {
-      console.error(`Error in fetch: ${err.message}`)
-    }
+
   }
-  
+
   useEffect(() => {
-    fetchBar()
+    
   }, [])
 
   return(

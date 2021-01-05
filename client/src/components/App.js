@@ -9,7 +9,7 @@ import Layout from "./Layout"
 const App = props => {
   return (
     <BrowserRouter>
-      <Route path="/" component={Layout}/>
+     
     </BrowserRouter>
   )
 }
