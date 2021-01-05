@@ -20,8 +20,8 @@ const BarShowContainer = (props) => {
         const error = new Error(errorMessage)
         throw(error)
       }
-      const bookData = await response.json()
-      setBarRecord(bookData.bar)
+      const barData = await response.json()
+      setBarRecord(barData.bar)
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }
