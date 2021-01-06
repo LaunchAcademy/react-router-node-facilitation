@@ -29,38 +29,9 @@ class Bar {
     return new Bar(myBar)
   }
 
-  isValid() {
-    this.errors = {}
-    const requiredFields = ["title", "content"]
-    let isValid = true
-
-    for(const requiredField of requiredFields) {
-      this.errors[requiredField] = []
-      if(!this[requiredField]) {
-        isValid = false
-        this.errors[requiredField].push("Can't be blank")
-      }
-    }
-    return isValid
-  }
-
   static getNextBarId() {
     const maxBar = _.maxBy(this.findAll(), bar => bar.id)
     return maxBar.id + 1
-  }
-
-  save() {
-    if(this.isValid()) {
-      delete this.errors
-      this.id = this.constructor.getNextBarId()
-      const bars = this.constructor.findAll()
-      bars.push(this)
-      const data = { bars: bars }
-      fs.writeFileSync(barsPath, JSON.stringify(data))
-      return true
-    } else {
-      return false
-    }
   }
 }
 

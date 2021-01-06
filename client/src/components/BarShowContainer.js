@@ -14,7 +14,7 @@ const BarShowContainer = (props) => {
   const fetchBar = async () => {
     const barId = props.match.params.id
     try {
-      const response = await fetch(`/api/v1/bar/${barId}`)
+      const response = await fetch(`/api/v1/bars/${barId}`)
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)

@@ -18,14 +18,4 @@ barsRouter.get("/:id", (req, res) => {
   }
 })
 
-barsRouter.post("/", (req, res) => {
-  const {title, content} = req.body
-  const bar = new Bar({ title, content })
-  if(bar.save()) {
-    res.status(201).json({ bar: bar })
-  } else {
-    res.status(422).json({ errors: bar.errors })
-  }
-})
-
 export default barsRouter
