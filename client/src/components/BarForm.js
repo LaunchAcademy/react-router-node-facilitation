@@ -1,25 +1,6 @@
-import React, { useState } from  "react"
+import React from  "react"
 
 const BarForm = (props) => {
-  const [barRecord, setBarRecord] = useState({
-    name: "",
-    address: "",
-    hoursOfOperation: "",
-    coverCharge: ""
-  })
-  
-  const handleChange = (event) => {
-    setBarRecord({
-      ...barRecord,
-      [event.currentTarget.name]: event.currentTarget.value
-    })
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    // debugger
-    props.addNewBar(barRecord)
-  }
   
   return (
     <form onSubmit={handleSubmit}>
@@ -28,8 +9,6 @@ const BarForm = (props) => {
           id="name"
           type="text"
           name="name"
-          onChange={handleChange}
-          value={barRecord.name}
         />
       </label>
       
@@ -38,8 +17,6 @@ const BarForm = (props) => {
           id="address"
           type="text"
           name="address"
-          onChange={handleChange}
-          value={barRecord.address}
         />
       </label>
       
@@ -48,8 +25,6 @@ const BarForm = (props) => {
           id="hoursOfOperation"
           type="text"
           name="hoursOfOperation"
-          onChange={handleChange}
-          value={barRecord.hoursOfOperation}
         />
       </label>
       
@@ -58,8 +33,6 @@ const BarForm = (props) => {
           id="coverCharge"
           type="text"
           name="coverCharge"
-          onChange={handleChange}
-          value={barRecord.coverCharge}
         />
       </label>
 
