@@ -1,17 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const BarTile = ({ id, name, address, hoursOfOperation, coverCharge }) => {
-    return(
-      <div className="bar">
-        <h1><Link to={`/bars/${id}`}> {name} </Link></h1>
+const BarTile = (props) => {
+  // const { id, name, address, hoursOfOperation, coverCharge } = props
+  
+  // debugger
+  return(
+    <div className="bar">
+      <h1>{props.name}</h1>
 
-        <h3>Address: {address} </h3>
-        <h3>Hours of Operation: {hoursOfOperation} </h3>
-        <h3>Cover Charge: {coverCharge} </h3>
-
-      </div>
-    )
-  }
+      <h3>Address: {props.address} </h3>
+      <h3>Hours of Operation: {props.hoursOfOperation} </h3>
+      <h3>Cover Charge: {props.coverCharge} </h3>
+    </div>
+  )
+}
 
 export default BarTile;

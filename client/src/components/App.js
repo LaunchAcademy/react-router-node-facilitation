@@ -1,16 +1,15 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
-// import BarShowContainer from './BarShowContainer'
-// import BarsIndexContainer from './BarsIndexContainer'
-
-import Layout from "./Layout"
+import BarsIndexContainer from './BarsIndexContainer'
 
 const App = props => {
   return (
-    <BrowserRouter>
-      <Route path="/" component={Layout}/>
-    </BrowserRouter>
+   <div className="layout">
+     <div className="main-body">
+       <BarsIndexContainer />
+    </div>
+   </div>
   )
 }
 
