@@ -10,8 +10,9 @@ const BarShowContainer = (props) => {
     hoursOfOperation: "",
     reviews: []
   })
-
+  
   const fetchBar = async () => {
+    // debugger
     const barId = props.match.params.id
     try {
       const response = await fetch(`/api/v1/bars/${barId}`)

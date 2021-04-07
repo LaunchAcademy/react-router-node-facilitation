@@ -3,7 +3,7 @@ import barsRouter from "./api/v1/barsRouter.js"
 import clientRouter from "./clientRouter.js"
 
 const rootRouter = new express.Router() 
-
+// localhost:3000/bars
 rootRouter.use("/api/v1/bars", barsRouter)
 
 rootRouter.use("/", clientRouter)
