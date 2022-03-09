@@ -1,7 +1,7 @@
 import fs from "fs"
 import _ from "lodash"
 
-const barsPath = "bars.json"
+const barsPath = "server/src/data/bars.json"
 
 class Bar {
   constructor({ id, name, address, coverCharge, hoursOfOperation, reviews }) {

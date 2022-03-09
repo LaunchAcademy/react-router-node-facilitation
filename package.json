@@ -1,18 +1,49 @@
 {
-  "type": "module",
-  "private": true,
-  "workspaces": [
-    "server",
-    "client"
-  ],
+  "name": "react-router-facilitation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
   "scripts": {
-    "build:client": "yarn workspace launch-sc-react-simple-blog-express-client build",
-    "dev": "yarn workspace launch-sc-react-simple-blog-express-server dev",
-    "dev:debug": "yarn workspace launch-sc-react-simple-blog-express-server dev:debug",
-    "heroku-postbuild": "yarn workspace launch-sc-react-simple-blog-express-client build",
-    "start": "yarn workspace launch-sc-react-simple-blog-express-server start"
+    "dev": "./node_modules/.bin/nodemon server/src/app.js",
+    "dev:debug": "./node_modules/.bin/nodemon --inspect-brk server/src/app.js",
+    "dev:client": "node_modules/.bin/webpack-dev-server --host 0.0.0.0",
+    "db:seed": "node ./server/bin/seed.js",
+    "webpack": "node_modules/.bin/webpack --config ./webpack.config.js"
   },
-  "engines": {
-    "node": "^14.8"
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^4.14.0",
+    "nodemon": "^1.19.0",
+    "sass-loader": "^6.0.2",
+    "style-loader": "^0.13.2",
+    "webpack": "~2.3.1",
+    "webpack-dev-server": "~2.4.2",
+    "write-file-webpack-plugin": "~4.2.0",
+    "@hot-loader/react-dom": "~16.13"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-session": "^1.16.1",
+    "flash": "^1.1.0",
+    "foundation-sites": "^6.6.3",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "line-reader": "^0.4.0",
+    "morgan": "^1.9.1",
+    "react": "~16.8.0",
+    "react-dom": "~16.8.0",
+    "whatwg-fetch": "1.0.0",
+    "pg": "^8.5.1",
+    "react-router-dom": "5.2.0",
+    "react-hot-loader": "^4.12.21"
   }
 }

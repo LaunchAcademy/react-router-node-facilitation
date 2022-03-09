@@ -9,4 +9,4 @@ module.exports = {
     "eslint no-param-reassign": ["error", { props: false }]
   },
   plugins: ["prettier"]
-}
+};
