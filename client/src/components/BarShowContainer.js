@@ -10,20 +10,25 @@ const BarShowContainer = (props) => {
     hoursOfOperation: "",
     reviews: []
   })
+  console.log(props);
 
   const fetchBar = async () => {
     const barId = props.match.params.id
+    
     try {
       const response = await fetch(`/api/v1/bars/${barId}`)
       if (!response.ok) {
-        const errorMessage = `${response.status} (${response.statusText})`
+        const errorMessage = `Uh oh!`
         const error = new Error(errorMessage)
         throw(error)
       }
-      const barData = await response.json()
-      setBarRecord(barData.bar)
-    } catch(err) {
-      console.error(`Error in fetch: ${err.message}`)
+
+      const responseBody = await response.json()
+      // debugger
+      setBarRecord(responseBody.bar)
+
+    } catch(error) {
+      console.log(`Aw dang Error in Fetch: ${error.message}`);
     }
   }
   
