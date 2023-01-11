@@ -16,9 +16,9 @@
   "private": true,
   "type": "module",
   "version": "0.0.1",
-  "name": "launch-sc-react-simple-blog-express-server",
+  "name": "react-router-node-server",
   "engines": {
-    "node": "^14.8"
+    "node": "^16.18"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

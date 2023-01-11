@@ -6,13 +6,13 @@
     "client"
   ],
   "scripts": {
-    "build:client": "yarn workspace launch-sc-react-simple-blog-express-client build",
-    "dev": "yarn workspace launch-sc-react-simple-blog-express-server dev",
-    "dev:debug": "yarn workspace launch-sc-react-simple-blog-express-server dev:debug",
-    "heroku-postbuild": "yarn workspace launch-sc-react-simple-blog-express-client build",
-    "start": "yarn workspace launch-sc-react-simple-blog-express-server start"
+    "build:client": "yarn workspace react-router-node-client build",
+    "dev": "yarn workspace react-router-node-server dev",
+    "dev:debug": "yarn workspace react-router-node-server dev:debug",
+    "heroku-postbuild": "yarn workspace react-router-node-client build",
+    "start": "yarn workspace react-router-node-server start"
   },
   "engines": {
-    "node": "^14.8"
+    "node": "^16.18"
   }
 }
