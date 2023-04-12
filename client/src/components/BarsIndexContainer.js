@@ -5,23 +5,15 @@ import BarTile from './BarTile';
 const BarsIndexContainer = (props) => {
   const [bars, setBars] = useState([])
 
-  const fetchBars = async () => {
-    try {
-      const response = await fetch('/api/v1/bars')
-      if (!response.ok) {
-        const errorMessage = `${response.status} (${response.statusText})`
-        const error = new Error(errorMessage)
-        throw(error)
-      }
-      const barData = await response.json()
-      setBars(barData)
-    } catch(err) {
-      console.error(`Error in fetch: ${err.message}`)
-    }
+  const getBars = async () => {
+    const response = await fetch("/api/v1/bars")
+    const barsObject = await response.json()
+    
+    setBars(barsObject)
   }
 
   useEffect(() => {
-    fetchBars()
+    getBars()
   }, [])
 
   const barTiles = bars.map(bar => {

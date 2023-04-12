@@ -27,13 +27,23 @@ const BarShowContainer = (props) => {
     }
   }
   
+  const getBar = async () => {
+
+    const barId = props.match.params.id
+
+    const response = await fetch(`/api/v1/bars/${barId}`)
+    const parsedBarData = await response.json()
+    // console.log(parsedBarData)
+    setBarRecord(parsedBarData.bar)
+  }
+
   useEffect(() => {
-    fetchBar()
+    getBar()
   }, [])
 
   return(
     <div className="bars-container">
-      <h3> Bar Showssssssss Container </h3>
+      <h3> Bar Show Container </h3>
       <Bar
         key={barRecord.id}
         id={barRecord.id}

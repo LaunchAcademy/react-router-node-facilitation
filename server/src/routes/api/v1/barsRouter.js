@@ -5,7 +5,8 @@ import Bar from "../../../models/Bar.js"
 const barsRouter = express.Router()
 
 barsRouter.get("/", (req, res) => {
-  res.set({ 'Content-Type': 'application/json' }).status(200).json(Bar.findAll())
+  const barObjects = Bar.findAll()
+  res.set({ 'Content-Type': 'application/json' }).status(200).json(barObjects)
 })
 
 barsRouter.get("/:id", (req, res) => {
