@@ -13,6 +13,6 @@
     "start": "yarn workspace launch-sc-react-simple-blog-express-server start"
   },
   "engines": {
-    "node": "^14.8"
+    "node": "^16.18"
   }
 }
