@@ -5,6 +5,17 @@ import BarTile from './BarTile';
 const BarsIndexContainer = (props) => {
   const [bars, setBars] = useState([])
 
+  const getBars = async () => {
+    const response = await fetch("/api/v1/bars")
+    const barsObject = await response.json()
+    
+    setBars(barsObject)
+  }
+
+  useEffect(() => {
+    getBars()
+  }, [])
+
   const barTiles = bars.map(bar => {
     return(
       <BarTile
