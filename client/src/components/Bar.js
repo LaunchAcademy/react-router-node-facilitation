@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Review from './Review'
 
 const Bar = ({id, name, reviews} ) => {
   const barReviews = reviews.map(review => {

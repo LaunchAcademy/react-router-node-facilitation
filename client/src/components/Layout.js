@@ -19,7 +19,6 @@ const Layout = (props) => {
           <Route exact path="/bars" component={BarsIndexContainer} />
           <Route exact path="/bars/:id" component={BarShowContainer} />
         </Switch>
-    
       </div>
 
       <div className="top-bar">

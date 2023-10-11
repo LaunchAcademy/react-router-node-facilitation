@@ -1,5 +1,6 @@
 import React, { useState, useEffect }  from 'react'
-import Bar from './Bar'
+
+import Review from "./Review"
 
 const BarShowContainer = (props) => {
   const [barRecord, setBarRecord] = useState({
@@ -11,45 +12,39 @@ const BarShowContainer = (props) => {
     reviews: []
   })
 
-  const fetchBar = async () => {
-    const barId = props.match.params.id
-    try {
-      const response = await fetch(`/api/v1/bars/${barId}`)
-      if (!response.ok) {
-        const errorMessage = `${response.status} (${response.statusText})`
-        const error = new Error(errorMessage)
-        throw(error)
-      }
-      const barData = await response.json()
-      setBarRecord(barData.bar)
-    } catch(err) {
-      console.error(`Error in fetch: ${err.message}`)
-    }
-  }
-  
-  const getBar = async () => {
+  const barId = props.match.params.id
 
-    const barId = props.match.params.id
-
+  const getSpecificBar = async () => {
     const response = await fetch(`/api/v1/bars/${barId}`)
-    const parsedBarData = await response.json()
-    // console.log(parsedBarData)
-    setBarRecord(parsedBarData.bar)
+    const barData = await response.json()
+    setBarRecord(barData.bar)
   }
 
+  
   useEffect(() => {
-    getBar()
+    getSpecificBar()
   }, [])
+
+  const barReviews = barRecord.reviews.map(review => {
+    return(
+      <Review
+        key={review.id}
+        id={review.id}
+        rating={review.rating}
+        body={review.body}
+      />
+    )
+  })
+
 
   return(
     <div className="bars-container">
       <h3> Bar Show Container </h3>
-      <Bar
-        key={barRecord.id}
-        id={barRecord.id}
-        name={barRecord.name}
-        reviews={barRecord.reviews}
-      />
+      <h2>{barRecord.name}</h2>
+      <p>{barRecord.address}</p>
+      <p>{barRecord.coverCharge}</p>
+      <p>{barRecord.hoursOfOperation}</p>
+      {barReviews}
     </div>
   )
 }

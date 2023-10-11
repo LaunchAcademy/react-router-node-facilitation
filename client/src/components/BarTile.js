@@ -7,8 +7,9 @@ const BarTile = ({ id, name, address, hoursOfOperation, coverCharge }) => {
       <div className="bar">
         <h1>
 
-          <Link to={`/bars/${id}`}> 
-            {name} 
+
+          <Link to={`/bars/${id}`}>
+            {name}
           </Link>
 
         </h1>
