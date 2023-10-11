@@ -2,6 +2,8 @@ import React, { useState, useEffect }  from 'react'
 
 import BarTile from './BarTile';
 
+import Layout from './Layout';
+
 const BarsIndexContainer = (props) => {
   const [bars, setBars] = useState([])
 

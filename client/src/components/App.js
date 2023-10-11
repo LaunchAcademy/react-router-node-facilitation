@@ -10,13 +10,13 @@ import Layout from "./Layout"
 const App = props => {
   return (
     <BrowserRouter>
-      <Route path="/" component={Layout}/>
+      <Switch>
+        <Route exact path="/" component={BarsIndexContainer} />
+        <Route exact path="/bars" component={BarsIndexContainer} />
+        <Route exact path="/bars/:id" component={BarShowContainer} />
+      </Switch>
     </BrowserRouter>
   )
 }
 
 export default App
-
-// <BrowserRouter>
-
-// </BrowserRouter>

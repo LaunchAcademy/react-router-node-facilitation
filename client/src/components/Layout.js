@@ -14,11 +14,7 @@ const Layout = (props) => {
       </div>
 
       <div className="main-body">
-        <Switch>
-          <Route exact path="/" component={BarsIndexContainer} />
-          <Route exact path="/bars" component={BarsIndexContainer} />
-          <Route exact path="/bars/:id" component={BarShowContainer} />
-        </Switch>
+        
       </div>
 
       <div className="top-bar">
