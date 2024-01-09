@@ -9,7 +9,7 @@ const Layout = (props) => {
     <div className="layout">
       <div className="top-bar grid-x">
         <div className="top-bar-left">
-          <Link className="site-title" to="/bars">Bars of Boston</Link>
+          <Link className="site-title" to="/bars">Bars of Launch</Link>
         </div>
       </div>
 
@@ -17,7 +17,7 @@ const Layout = (props) => {
       <Switch>
         <Route exact path="/" component={BarsIndexContainer} />
         <Route exact path="/bars" component={BarsIndexContainer} />
-        <Route exact path="/bars/:id" component={BarShowContainer} />
+        <Route exact path="/bars/:idParams" component={BarShowContainer} />
       </Switch>
       </div>
 

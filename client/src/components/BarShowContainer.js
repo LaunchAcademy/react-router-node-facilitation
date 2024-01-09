@@ -2,6 +2,7 @@ import React, { useState, useEffect }  from 'react'
 import Bar from './Bar'
 
 const BarShowContainer = (props) => {
+  // debugger
   const [barRecord, setBarRecord] = useState({
     id: null,
     name: "",
@@ -12,7 +13,7 @@ const BarShowContainer = (props) => {
   })
 
   const fetchBar = async () => {
-    const barId = props.match.params.id
+    const barId = props.match.params.idParams
     try {
       const response = await fetch(`/api/v1/bars/${barId}`)
       if (!response.ok) {

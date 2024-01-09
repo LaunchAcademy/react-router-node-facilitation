@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const BarTile = ({ id, name, address, hoursOfOperation, coverCharge }) => {
-    return(
+    
+  
+  return(
       <div className="bar">
         <h1><Link to={`/bars/${id}`}> {name} </Link></h1>
 
